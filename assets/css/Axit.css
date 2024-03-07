@@ -1070,7 +1070,7 @@ footer .container {
 footer .list-of-social-media {
   margin-bottom: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
@@ -1095,11 +1095,8 @@ footer .list-of-social-media li a:hover {
   footer .container {
     padding: 20px 10%;
   }
-}
 
-@media (max-width: 350px) {
-  footer .list-of-social-media li a {
-    font-size: 20px;
-  }
+  footer .list-of-social-media {
+    justify-content: center;
 }
 /* End Footer */
