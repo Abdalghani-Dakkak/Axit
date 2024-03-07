@@ -389,35 +389,36 @@ header .container {
 }
 /* End Social Media */
 
-/* Start Taps Section */
 #tapsSection,
 #standard,
 #pricingSection {
   background-color: var(--grayOfSection);
 }
 
+/* Start Taps Section */
 #tapsSection .container {
-  display: grid;
-  grid-template-columns: 10% 40% 25%;
+  display: flex;
   justify-content: space-between;
-  align-items: space-around;
+  /* align-items: space-around; */
+}
+
+#listOfTaps {
+  flex-basis: 10%;
 }
 
 #listOfTaps li {
-  position: relative;
   width: 100%;
   height: calc(100% / 3);
   background-color: var(--grayOfCard);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   transition: 0.8s;
   text-align: center;
 }
 
 #listOfTaps li p {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   color: #fff;
   font-size: 18px;
   text-transform: uppercase;
@@ -441,6 +442,10 @@ header .container {
 
 .active {
   background-color: var(--orange) !important;
+}
+
+#tapsSectionText {
+  flex-basis: 40%;
 }
 
 #tapsSectionText h2 {
@@ -467,33 +472,22 @@ header .container {
 }
 
 .img {
+  flex-basis: 25%;
   align-self: center;
-}
-
-@media (max-width: 950px) {
-  #tapsSection .container {
-    grid-template-columns: 15% 45% 25%;
-  }
 }
 
 @media (max-width: 768px) {
   #tapsSection .container {
-    grid-template-columns: 1fr;
-    grid-template-rows: 10% 45% 35%;
-    align-content: space-between;
-    text-align: center;
+    flex-direction: column;
   }
 
   #listOfTaps {
-    width: 100%;
-    height: 100px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    flex-basis: 80px;
+    display: flex;
     margin-bottom: 20px;
   }
 
   #listOfTaps li {
-    width: 100%;
     height: 100%;
   }
 
@@ -513,14 +507,12 @@ header .container {
     border-end-start-radius: 0;
   }
 
+  #tapsSectionText {
+    text-align: center;
+  }
+
   .img {
     margin-top: 20px;
-  }
-}
-
-@media (max-width: 400px) {
-  #tapsSectionText p {
-    font-size: 14px;
   }
 }
 /* End Taps Section */
@@ -1077,7 +1069,9 @@ footer .container {
 
 footer .list-of-social-media {
   margin-bottom: 20px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 footer .list-of-social-media li a {
